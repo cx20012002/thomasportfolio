@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="sticky top-0 flex h-16 items-center justify-between px-8 font-light"
+      className="sticky top-0 flex h-16 items-center justify-between px-8 font-light z-50"
       animate={{
         opacity: isVisible ? 1 : 0,
       }}
