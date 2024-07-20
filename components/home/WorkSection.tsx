@@ -15,9 +15,12 @@ const WorkSection = () => {
 
   return (
     <div className="flex h-fit flex-col items-center justify-center py-32 font-poppins">
+      
+      {/* Title */}
       <p className="sticky top-0 flex h-[95vh] items-center justify-center text-[25vw] text-neutral-700">
         WORK
       </p>
+      
       <motion.div
         ref={ref}
         className="relative flex h-fit w-full flex-col items-center justify-center gap-y-20 py-20"
