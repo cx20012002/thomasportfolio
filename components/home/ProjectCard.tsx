@@ -2,8 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { getRelativeCoordinates } from "@/util/generalFunc";
-import { FaArrowLeft } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
 
 const ProjectCard = ({
@@ -57,7 +55,7 @@ const ProjectCard = ({
         <motion.div
           onMouseEnter={() => setIsHovered2(true)}
           onMouseLeave={() => setIsHovered2(false)}
-          className="absolute top-[50%] flex h-[70%] w-[40%] -translate-y-[50%] items-center justify-center group"
+          className="group absolute top-[50%] flex h-[70%] w-[90%] -translate-y-[50%] items-center justify-center lg:h-[70%] lg:w-[50%]"
         >
           <motion.div
             style={{
@@ -68,24 +66,22 @@ const ProjectCard = ({
           />
 
           {/* Inner Image */}
-          <div
-            className="absolute aspect-[3/2] w-[70%]"
-          >
+          <div className="absolute aspect-[3/2] w-[70%]">
             <Image src={imgSrc} alt="" fill sizes="lg" />
           </div>
         </motion.div>
-
       </motion.div>
 
       {isHovered && (
         <motion.div
-          className={`pointer-events-none fixed left-0 top-0 -m-[5px] h-[20px] w-[20px] rounded-full flex items-center justify-center ${isHovered2 ? "bg-black" : "bg-neutral-500"}`}
+          className={`pointer-events-none fixed left-0 top-0 -m-[5px] flex h-[20px] w-[20px] items-center justify-center rounded-full ${isHovered2 ? "bg-black" : "bg-neutral-500"}`}
           style={{ x: mousePosition.x, y: mousePosition.y }}
           animate={{ scale: isHovered2 ? 3 : 1 }}
           transition={{ duration: 0.2 }}
         >
-          {isHovered2 && <ArrowRight className="text-nature-500 w-2 rotate-[-45deg]"/>}
-          
+          {isHovered2 && (
+            <ArrowRight className="text-nature-500 w-2 rotate-[-45deg]" />
+          )}
         </motion.div>
       )}
     </>
@@ -93,4 +89,3 @@ const ProjectCard = ({
 };
 
 export default ProjectCard;
-

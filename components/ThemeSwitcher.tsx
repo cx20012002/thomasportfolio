@@ -1,11 +1,10 @@
-// app/components/ThemeSwitcher.tsx
-'use client';
+"use client";
 
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
-import { CiDark, CiLight } from 'react-icons/ci';
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { CiDark, CiLight } from "react-icons/ci";
 
-export function ThemeSwitcher() {
+export function ThemeSwitcher({ swtichText }: { swtichText?: boolean }) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -17,13 +16,15 @@ export function ThemeSwitcher() {
 
   return (
     <>
-      {theme === 'dark' ? (
-        <button onClick={() => setTheme('light')}>
+      {theme === "dark" ? (
+        <button onClick={() => setTheme("light")} className="flex gap-5 text-lg">
           <CiLight className="text-2xl" />
+          {swtichText && <span>SWITCH TO LIGHT THEME</span>}
         </button>
       ) : (
-        <button onClick={() => setTheme('dark')}>
+        <button onClick={() => setTheme("dark")} className="flex gap-5 text-lg">
           <CiDark className="text-2xl" />
+          {swtichText && <span>SWITCH TO DARK THEME</span>}
         </button>
       )}
     </>

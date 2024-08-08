@@ -40,21 +40,23 @@ const HeadSection = () => {
 
   return (
     <div>
-      <div className="sticky top-16 mb-10 flex px-8 dark:mix-blend-difference z-10">
+      <div className="sticky top-16 z-10 mb-10 flex px-8 dark:mix-blend-difference">
         {/* Animated Title */}
-        <div className="w-4/5">
+        <div className="w-full xl:w-4/5">
           <div className="flex items-center gap-5">
             <div className="aspect-square h-12 rounded-full opacity-0"></div>
-            <p className="text-[130px] font-medium">Designing</p>
+            <p className="text-[80px] font-medium xl:text-[130px]">Designing</p>
           </div>
 
-          <div className="flex items-center gap-5 -mt-5">
+          <div className="-mt-5 flex items-center gap-5">
             <div className="aspect-square h-12 rounded-full bg-current"></div>
-            <div className="h-[200px] overflow-hidden">
+            <div className="h-[100px] overflow-hidden xl:h-[200px]">
               <motion.div style={{ y: counter }}>
                 {content.map((item, idx) => (
                   <div key={idx} ref={ref}>
-                    <p className="text-[130px] font-medium">{item}</p>
+                    <p className="text-[80px] font-medium xl:text-[130px]">
+                      {item}
+                    </p>
                   </div>
                 ))}
               </motion.div>
@@ -63,7 +65,7 @@ const HeadSection = () => {
         </div>
 
         {/* Social Icons */}
-        <div className="flex w-1/5 items-end justify-end">
+        <div className="hidden w-1/5 items-end justify-end xl:flex">
           <div className="mb-14 flex gap-5">
             {icons.map((item, idx) => (
               <div
@@ -82,7 +84,13 @@ const HeadSection = () => {
       </div>
 
       {/* Banner Video */}
-      <video src="/banner-video.mp4" autoPlay loop muted className="w-full" />
+      <video
+        src="/banner-video.mp4"
+        autoPlay
+        loop
+        muted
+        className="h-[800px] w-full object-cover xl:h-auto xl:object-contain"
+      />
     </div>
   );
 };

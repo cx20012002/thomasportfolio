@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { motion, useScroll } from "framer-motion";
 import React, { useRef } from "react";
@@ -14,13 +14,12 @@ const WorkSection = () => {
   });
 
   return (
-    <div className="flex h-fit flex-col items-center justify-center py-32 font-poppins">
-      
+    <div className="flex h-fit flex-col items-center justify-center dark:bg-[#0f0f0f] bg-white py-32 font-poppins">
       {/* Title */}
       <p className="sticky top-0 flex h-[95vh] items-center justify-center text-[25vw] text-neutral-700">
         WORK
       </p>
-      
+
       <motion.div
         ref={ref}
         className="relative flex h-fit w-full flex-col items-center justify-center gap-y-20 py-20"
@@ -41,10 +40,10 @@ const WorkSection = () => {
           );
         })}
       </motion.div>
-      
+
       {/* Button */}
-      <div className="group relative cursor-pointer overflow-hidden rounded-full border border-current px-8 py-5 font-inter text-lg">
-        <div className="transition-colors duration-300 group-hover:text-secondary">
+      <div className="group relative cursor-pointer overflow-hidden rounded-full border border-current px-8 py-5 font-inter text-lg z-10">
+        <div className="transition-colors duration-300 group-hover:text-secondary z-10">
           All Projects
         </div>
         <div className="absolute inset-0 -z-10 h-full w-full translate-y-full rounded-full bg-current transition-transform duration-300 group-hover:translate-y-0" />

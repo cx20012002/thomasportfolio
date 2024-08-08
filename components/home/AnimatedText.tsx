@@ -16,7 +16,7 @@ const AnimatedText = () => {
   return (
     <div
       ref={ref}
-      className="flex flex-col justify-start overflow-hidden leading-tight h-4/5"
+      className="flex flex-col justify-start overflow-hidden leading-tight h-4/5 dark:bg-[#0f0f0f] bg-white"
     >
       <motion.h4 className="font-inter text-[18vw] font-medium" style={{ x }}>
         Crafting
